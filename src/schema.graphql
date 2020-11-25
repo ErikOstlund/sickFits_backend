@@ -16,7 +16,12 @@ type Mutation {
 }
 
 type Query {
-	items: [Item]!
+	items(
+		where: ItemWhereInput
+		orderBy: ItemOrderByInput
+		skip: Int
+		first: Int
+	): [Item]!
 	# takes in 'where' parameter and returns Item
 	item(where: ItemWhereUniqueInput!): Item
 	# takes in 'where' parameter and returns ItemConnection
