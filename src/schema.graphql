@@ -17,5 +17,8 @@ type Mutation {
 
 type Query {
 	items: [Item]!
+	# takes in 'where' parameter and returns Item
 	item(where: ItemWhereUniqueInput!): Item
+	# takes in 'where' parameter and returns ItemConnection
+	itemsConnection(where: ItemWhereInput): ItemConnection!
 }
